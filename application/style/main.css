@@ -6,11 +6,16 @@
     --gray-four: #201825;
     --gray-five: #292B2F;
     --gray-six: #8E9297;
+    --gray-seven: #B9BBBE;
 
     --gray-survol-one: #3C3F45;
     --gray-survol-two: #DCDDDE;
+    --gray-survol-three: #3F434A;
+    --gray-survol-four: #32353B;
 
     --gray-selected-one: #42464D;
+
+    --red-one: #ED4245;
 
     --blue-one: #5865F2;
     --btn-careful-red: #DA4445;
@@ -24,6 +29,13 @@
     --font-size-guild-title: 2vh;
     --saturation-factor: 1;
     --elevation-low: 0 1px 0 hsla(240,calc(var(--saturation-factor, 1)*11.1%),1.8%,0.2),0 1.5px 0 hsla(240,calc(var(--saturation-factor, 1)*7.7%),2.5%,0.05),0 2px 0 hsla(240,calc(var(--saturation-factor, 1)*11.1%),1.8%,0.05);
+
+
+    --presence-dot-color-online: #3BA55D;
+    --presence-dot-color-dnd: #ED4245;
+    --presence-dot-color-idle: #FAA81A;
+    --presence-dot-color-invisible: #747F8D;
+
 }
 
 /*

@@ -30,7 +30,7 @@
     flex-flow: column;
 }
 #app #channel_content {
-    background-color: #333333;
+    background-color: var(--gray-two);
     width: 100%;
 }
 #app #member_list {
@@ -167,7 +167,7 @@
 
         /* Guild categories */
 #app #channels_and_settings div.modes div.guild_mode #channel_list {
-    height: 91%;
+    height: 92%;
     overflow: hidden;
     overflow-y: scroll;
     padding-bottom: 15px;
@@ -286,12 +286,118 @@
     height: 100%;
 }
 
-    /* user panel */
-#app #channels_and_settings div.user_settings_panel {
-    height: 165px;
+    /* user panel (total height: 165px ) */ 
+        /* Voice */
+#app #channels_and_settings div.user_settings_panel__voice {
+    height: 105px;
     float: bottom;
     background-color: var(--gray-five);
+    border-bottom: 1px solid var(--gray-two);
+    width: 100%;
 }
+#app #channels_and_settings div.user_settings_panel__voice {
+    color: white;
+}
+
+        /* User */
+#app #channels_and_settings div.user_settings_panel__user {
+    height: 60px;
+    float: bottom;
+    background-color: var(--gray-five);
+    display: flex;
+    width: 100%;
+}
+#app #channels_and_settings div.user_settings_panel__user div.user {
+    display: flex;
+    align-items: center;
+    justify-content: left;
+    margin: 7px 5px 7px 5px;
+    padding: 2px;
+    border-radius: 5px;
+    cursor: pointer;
+    width: 50%;
+}
+#app #channels_and_settings div.user_settings_panel__user div.user:hover {
+    background-color: var(--gray-survol-three);
+}
+#app #channels_and_settings div.user_settings_panel__user div.user div.infos {
+    overflow: hidden;
+}
+#app #channels_and_settings div.user_settings_panel__user div.user div.infos div.username {
+    color: white;
+    font-weight: bold;
+    font-size: 14px;
+
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+#app #channels_and_settings div.user_settings_panel__user div.user div.infos div.tag {
+    color: var(--gray-six);
+    font-size: 12px;
+}
+#app #channels_and_settings div.user_settings_panel__user div.user div.avatar {
+
+}
+#app #channels_and_settings div.user_settings_panel__user div.user div.avatar svg rect.presence_dot {
+    border-radius: 10px;
+}
+
+#app #channels_and_settings div.user_settings_panel__user div.user div.avatar svg div.avatarStack img.avatar {
+    width: 32px;
+    height: 32px;
+    border-radius: 100px;
+}
+
+#app #channels_and_settings div.user_settings_panel__user div.buttons {
+    display: flex;
+    align-items: center;
+    width: max-content;
+    margin-right: 7px;
+}
+#app #channels_and_settings div.user_settings_panel__user div.buttons div.button{
+    margin: 2px;
+    padding: 5px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+#app #channels_and_settings div.user_settings_panel__user div.buttons div.button {
+    color: var(--gray-seven);
+}
+
+#app #channels_and_settings div.user_settings_panel__user div.buttons div.button svg path.strikethrough {
+    color: var(--red-one);
+}
+#app #channels_and_settings div.user_settings_panel__user div.buttons div.button svg.force-deaf,svg.force-mute {
+    color: var(--red-one);
+}
+
+#app #channels_and_settings div.user_settings_panel__user div.buttons div.button:hover {
+    background-color: var(--gray-survol-three);
+}
+
+
+
+
+
+
+/************************************************/
+/*                                              */
+/*                    Messages                  */
+/*                                              */
+/************************************************/
+
+#app #channel_content div.message:hover {
+    background-color: var(--gray-survol-four);
+}
+#app #channel_content div.banner {
+    background-color: var(--gray-two);
+    -webkit-box-shadow: var(--elevation-low);
+    box-shadow: var(--elevation-low);
+    font-weight: 600;
+    vertical-align: center;
+    padding: 16px 16px;
+}
+
 
 
 
