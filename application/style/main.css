@@ -8,6 +8,9 @@
     --gray-six: #8E9297;
 
     --gray-survol-one: #3C3F45;
+    --gray-survol-two: #DCDDDE;
+
+    --gray-selected-one: #42464D;
 
     --blue-one: #5865F2;
     --btn-careful-red: #DA4445;
@@ -34,4 +37,14 @@
 
 body {
     font-family: "Whitney", "ABC Ginto Normal", "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
+.noselect {
+    -webkit-touch-callout: none; /* iOS Safari */
+      -webkit-user-select: none; /* Safari */
+       -khtml-user-select: none; /* Konqueror HTML */
+         -moz-user-select: none; /* Old versions of Firefox */
+          -ms-user-select: none; /* Internet Explorer/Edge */
+              user-select: none; /* Non-prefixed version, currently
+                                    supported by Chrome, Edge, Opera and Firefox */
 }

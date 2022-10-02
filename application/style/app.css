@@ -21,7 +21,7 @@
     text-align: center;
 }
 #app #channels_and_settings {
-    background-color: var(--gray-two);
+    background-color: var(--gray-one);
     width: 250px;
     min-width: 250px;
     max-width: 250px;
@@ -90,13 +90,14 @@
     background-color: var(--blue-one);
     color: white;
 }
-#app #guild_list div.guild p.text {
+#app #guild_list div.guild label.text {
     margin: 0;
     padding: 0;
     display: flex;
     justify-content: center;
     align-items: center;
     height: 100%;
+    cursor: pointer;
 }
 #app #guild_list div.guild img.guild_icon {
     width: 100%;
@@ -106,6 +107,7 @@
 /********** Channels and setting panel **********/
 #app #channels_and_settings div.modes {
     height: 100%;
+    overflow: hidden;
 }
     /* Guild mode */
 #app #channels_and_settings div.modes div.guild_mode {
@@ -152,35 +154,85 @@
 #app #channels_and_settings div.modes div.guild_mode div.guild_panel_banner div.guild_title div.left div.title{
     overflow: hidden;
 }
-#app #channels_and_settings div.modes div.guild_mode div.guild_panel_banner div.guild_title p.guild_panel_banner_text {
+#app #channels_and_settings div.modes div.guild_mode div.guild_panel_banner div.guild_title label.guild_panel_banner_text {
     margin: 0px auto;
-    font-size: var(--font-size-guild-title);
+    font-size: var(--font-size-guild-title); /* Maybe without */
     height: fit-content;
+    color:white;
 
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
 }
-        /* Guild channels */
+
+        /* Guild categories */
 #app #channels_and_settings div.modes div.guild_mode #channel_list {
-    height: 100%;
+    height: 91%;
+    overflow: hidden;
+    overflow-y: scroll;
+    padding-bottom: 15px;
 }
+
+#app #channels_and_settings div.modes div.guild_mode #channel_list div.category {
+    color: var(--gray-six);
+    padding-top: 16px;
+}
+#app #channels_and_settings div.modes div.guild_mode #channel_list div.category div.category_name {
+    display: flex;
+    vertical-align: baseline;
+    align-items: center;
+    cursor: pointer;
+}
+#app #channels_and_settings div.modes div.guild_mode #channel_list div.category div.category_name:hover{
+    color: var(--gray-survol-two);
+}
+#app #channels_and_settings div.modes div.guild_mode #channel_list div.category.collapsed div.category_name div.arrow svg.arrow{
+    transform: rotate(-90deg);
+    transition: 0.3s all;
+}
+#app #channels_and_settings div.modes div.guild_mode #channel_list div.category div.category_name div.arrow svg.arrow {
+    width: 15px;
+    height: 15px;
+    padding: 2px;
+    transition: 0.3s all;
+}
+#app #channels_and_settings div.modes div.guild_mode #channel_list div.category div.category_name div.name label.name {
+    font-weight: bold;
+    text-transform:uppercase;
+    font-size: 12px;
+    cursor: pointer;
+}
+
 #app #channels_and_settings div.modes div.guild_mode #channel_list div.channel {
     /* background-color: #2c15f7; */
     margin: 2px;
-    margin-left: 10px;
+    margin-left: 0px;
+    padding: 5px;
     display: flex;
     flex-direction: row;
     align-items: center;
     border-radius: 5px;
-    padding: 5px;
     cursor: pointer;
+
+    margin-left: 10px;
 }
-#app #channels_and_settings div.modes div.guild_mode #channel_list div.channel:hover {
+
+
+#app #channels_and_settings div.modes div.guild_mode #channel_list div.channel.selected {
+    background-color: var(--gray-selected-one);
+}
+#app #channels_and_settings div.modes div.guild_mode #channel_list div.channel.selected div.left div.name label.text{
+    color: white;
+}
+#app #channels_and_settings div.modes div.guild_mode #channel_list div.channel:not(.selected):hover {
     background-color: var(--gray-survol-one);
 }
-#app #channels_and_settings div.modes div.guild_mode #channel_list div.channel:hover div.left div.name p.text{
-    color: hsl();
+#app #channels_and_settings div.modes div.guild_mode #channel_list div.channel div.left div.name label.text{
+    color: var(--gray-six);
+    cursor: pointer;
+}
+#app #channels_and_settings div.modes div.guild_mode #channel_list div.channel:not(.selected,.unread):hover div.left div.name label.text{
+    color: var(--gray-survol-two);
 }
 #app #channels_and_settings div.modes div.guild_mode #channel_list div.channel div.left {
     display: flex;
@@ -197,17 +249,34 @@
     display: flex;
     flex-direction: row;
 }
+#app #channels_and_settings div.modes div.guild_mode #channel_list div.channel:not(.unread) div.unread div.dot {
+    display: none;
+}
+#app #channels_and_settings div.modes div.guild_mode #channel_list div.channel.unread div.left div.name label.text {
+    color: white;
+}
+#app #channels_and_settings div.modes div.guild_mode #channel_list div.channel.unread div.unread div.dot {
+    background-color: white;
+    height: 8px;
+    width: 4px;
+    border-radius: 0 4px 4px 0;
+    margin-left: -15px;
+}
+
 #app #channels_and_settings div.modes div.guild_mode #channel_list div.channel div.left div.icon {
     margin-right: 5px;
 }
 #app #channels_and_settings div.modes div.guild_mode #channel_list div.channel div.left div.icon svg.icon {
     color: var(--gray-six);
 }
-#app #channels_and_settings div.modes div.guild_mode #channel_list div.channel div.left div.name p.text {
+#app #channels_and_settings div.modes div.guild_mode #channel_list div.channel div.left div.name label.text {
     margin: 0px;
     color: var(--gray-six);
     white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis
 }
+
 
 
 
