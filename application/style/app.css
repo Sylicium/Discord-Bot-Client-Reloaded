@@ -116,7 +116,7 @@
 }
         /* Guild panel banner */
 #app #channels_and_settings div.modes div.guild_mode div.guild_panel_banner {
-    background-color: var(--gray-two);
+    background-color: var(--gray-one);
     transition: background-color .1s linear;
     -webkit-box-shadow: var(--elevation-low);
     box-shadow: var(--elevation-low);
@@ -359,8 +359,6 @@
     padding: 5px;
     border-radius: 5px;
     cursor: pointer;
-}
-#app #channels_and_settings div.user_settings_panel__user div.buttons div.button {
     color: var(--gray-seven);
 }
 
@@ -395,9 +393,48 @@
     box-shadow: var(--elevation-low);
     font-weight: 600;
     vertical-align: center;
-    padding: 16px 16px;
+    /* padding: 16px 16px; */
+    height: 60px;
+    display: flex;
+
+    align-items: center;
+}
+#app #channel_content div.banner div.icon {
+    justify-content: left;
+    margin-left: 20px;
+}
+#app #channel_content div.banner div.icon svg.icon {
+    color: var(--gray-six);
+    width: 24px;
+    height: 24px;
+}
+#app #channel_content div.banner div.title {
+    margin-left: 10px;
+    justify-content: left;
+}
+#app #channel_content div.banner div.title label.channel_name {
+    color: white;
 }
 
+#app #channel_content div.banner div.buttons {
+    display: flex;
+    margin-left: auto;
+    margin-right: 10px;
+}
+
+#app #channel_content div.banner div.buttons div.button {
+    margin: 2px;
+    margin-left: auto;
+    padding: 5px;
+    border-radius: 5px;
+    cursor: pointer;
+    color: var(--gray-seven);
+}
+
+#app #channel_content div.banner div.buttons div.button:hover {
+    
+    background-color: var(--gray-survol-three);
+}
 
 
 
