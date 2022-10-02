@@ -1,0 +1,252 @@
+
+
+#app {
+    display: flex;
+    overflow: hidden;
+    position: fixed;
+    top:0px;
+    left:0;
+    width: 100%;
+    height: 100%;
+    background-color: var(--gray-four);
+}
+
+
+#app #guild_list {
+    background-color: var(--gray-four);
+    width: 70px;
+    min-width: 70px;
+    max-width: 70px;
+
+    text-align: center;
+}
+#app #channels_and_settings {
+    background-color: var(--gray-two);
+    width: 250px;
+    min-width: 250px;
+    max-width: 250px;
+    border-radius: 10px 0 0px 0px;
+    display: flex;
+    flex-flow: column;
+}
+#app #channel_content {
+    background-color: #333333;
+    width: 100%;
+}
+#app #member_list {
+    background-color: #444444;
+    width: 240px;
+    min-width: 240px;
+    max-width: 240px;
+}
+
+
+/********** Guild list **********/
+#app #guild_list div.menu {
+    border-radius: 25px;
+    background-color: var(--gray-two);
+    width: 50px;
+    height: 50px;
+    text-align: center;
+    margin: 10px auto;
+    transition: 0.2s ease-in-out;
+    cursor: pointer;
+}
+#app #guild_list div.menu:hover {
+    border-radius: 17px;
+    transition: 0.2s ease-in-out;
+    background-color: var(--blue-one);
+    color: white;
+}
+#app #guild_list div.menu svg.homeIcon {
+    color:white;
+    height: 100%;
+}
+
+#app #guild_list div.separator {
+    width: 50%;
+    height: 2px;
+    margin: 0px auto;
+    border-radius: 10px;
+    background-color: var(--gray-one);
+}
+
+#app #guild_list div.guild {
+    border-radius: 25px;
+    /*background-color: var(--gray-two);*/
+    background-color: var(--gray-two);
+    width: 50px;
+    height: 50px;
+    text-align: center;
+    transition: 0.2s ease-in-out;
+    cursor: pointer;
+    margin: 10px auto;
+    color: #DCDDDE;
+    overflow: hidden;
+}
+#app #guild_list div.guild:hover {
+    border-radius: 17px;
+    transition: 0.2s ease-in-out;
+    background-color: var(--blue-one);
+    color: white;
+}
+#app #guild_list div.guild p.text {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+}
+#app #guild_list div.guild img.guild_icon {
+    width: 100%;
+    height: 100%;
+}
+
+/********** Channels and setting panel **********/
+#app #channels_and_settings div.modes {
+    height: 100%;
+}
+    /* Guild mode */
+#app #channels_and_settings div.modes div.guild_mode {
+    /* background-color: aqua; */
+    height: 100%;
+}
+        /* Guild panel banner */
+#app #channels_and_settings div.modes div.guild_mode div.guild_panel_banner {
+    background-color: var(--gray-two);
+    transition: background-color .1s linear;
+    -webkit-box-shadow: var(--elevation-low);
+    box-shadow: var(--elevation-low);
+    font-weight: 600;
+    vertical-align: center;
+    padding: 16px 16px;
+    cursor: pointer;
+}
+#app #channels_and_settings div.modes div.guild_mode div.guild_panel_banner:hover {
+    background-color: var(--gray-survol-one);
+}
+#app #channels_and_settings div.modes div.guild_mode div.guild_panel_banner div.guild_title {
+    display: flex;
+    flex-direction: row;
+}
+#app #channels_and_settings div.modes div.guild_mode div.guild_panel_banner div.guild_title div.left{
+    display: flex;
+    flex-direction: row;
+    width: 170%;
+    overflow: hidden;
+}
+#app #channels_and_settings div.modes div.guild_mode div.guild_panel_banner div.guild_title div.right {
+    /* width: 30%; */
+    background-color: aliceblue; /* debug */
+    margin-left: 10px;
+}
+#app #channels_and_settings div.modes div.guild_mode div.guild_panel_banner div.guild_title div.left div,p{
+    margin-left: 2px;
+    margin-right: 2px;
+}
+#app #channels_and_settings div.modes div.guild_mode div.guild_panel_banner div.guild_title div.left div.boost_badge svg.boost{
+    max-width: 20px;
+    max-height: 20px;
+}
+#app #channels_and_settings div.modes div.guild_mode div.guild_panel_banner div.guild_title div.left div.title{
+    overflow: hidden;
+}
+#app #channels_and_settings div.modes div.guild_mode div.guild_panel_banner div.guild_title p.guild_panel_banner_text {
+    margin: 0px auto;
+    font-size: var(--font-size-guild-title);
+    height: fit-content;
+
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+        /* Guild channels */
+#app #channels_and_settings div.modes div.guild_mode #channel_list {
+    height: 100%;
+}
+#app #channels_and_settings div.modes div.guild_mode #channel_list div.channel {
+    /* background-color: #2c15f7; */
+    margin: 2px;
+    margin-left: 10px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    border-radius: 5px;
+    padding: 5px;
+    cursor: pointer;
+}
+#app #channels_and_settings div.modes div.guild_mode #channel_list div.channel:hover {
+    background-color: var(--gray-survol-one);
+}
+#app #channels_and_settings div.modes div.guild_mode #channel_list div.channel:hover div.left div.name p.text{
+    color: hsl();
+}
+#app #channels_and_settings div.modes div.guild_mode #channel_list div.channel div.left {
+    display: flex;
+    flex-direction: row;
+    width: 80%;
+    align-items: center;
+    overflow: hidden;
+}
+#app #channels_and_settings div.modes div.guild_mode #channel_list div.channel div.right {
+    /* display: flex;
+    flex-direction: row; */
+}
+#app #channels_and_settings div.modes div.guild_mode #channel_list div.channel div.right div.channel_options{
+    display: flex;
+    flex-direction: row;
+}
+#app #channels_and_settings div.modes div.guild_mode #channel_list div.channel div.left div.icon {
+    margin-right: 5px;
+}
+#app #channels_and_settings div.modes div.guild_mode #channel_list div.channel div.left div.icon svg.icon {
+    color: var(--gray-six);
+}
+#app #channels_and_settings div.modes div.guild_mode #channel_list div.channel div.left div.name p.text {
+    margin: 0px;
+    color: var(--gray-six);
+    white-space: nowrap;
+}
+
+
+
+    /* DM mode */
+#app #channels_and_settings div.modes div.dm_mode {
+    background-color: rgb(204, 0, 255);
+    height: 100%;
+}
+
+    /* user panel */
+#app #channels_and_settings div.user_settings_panel {
+    height: 165px;
+    float: bottom;
+    background-color: var(--gray-five);
+}
+
+
+
+/*
+#app #guild_list {
+    background-color: #222222;
+    width: 4vw;
+    min-width: 4vw;
+    max-width: 4vw;
+}
+#app #channels_and_settings {
+    background-color: #111111;
+    width: 12vw;
+    min-width: 12vw;
+    max-width: 12vw;
+}
+#app #channel_content {
+    background-color: #333333;
+    width: 100%;
+}
+#app #member_list {
+    background-color: #444444;
+    width: 13vw;
+    min-width: 13vw;
+    max-width: 13vw;
+}
+*/

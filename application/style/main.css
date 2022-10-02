@@ -1,0 +1,37 @@
+
+* {
+    --gray-one: #2F3136;
+    --gray-two: #36393F;
+    --gray-three: #454950;
+    --gray-four: #201825;
+    --gray-five: #292B2F;
+    --gray-six: #8E9297;
+
+    --gray-survol-one: #3C3F45;
+
+    --blue-one: #5865F2;
+    --btn-careful-red: #DA4445;
+    --btn-careful-red2: #D83C3E;
+    --btn-careful-red2-hover: #A12D2F;
+    --btn-positive: #2D7D46;
+    --btn-positive-hover: #215B32;
+    --btn-blue: #5865F2;
+    --btn-blue-hover: #5865F2;
+
+    --font-size-guild-title: 2vh;
+    --saturation-factor: 1;
+    --elevation-low: 0 1px 0 hsla(240,calc(var(--saturation-factor, 1)*11.1%),1.8%,0.2),0 1.5px 0 hsla(240,calc(var(--saturation-factor, 1)*7.7%),2.5%,0.05),0 2px 0 hsla(240,calc(var(--saturation-factor, 1)*11.1%),1.8%,0.05);
+}
+
+/*
+@font-face {
+    font-family: 'Whitney';
+    font-style: normal;
+    font-weight: normal;
+    src: url(https://onedrive.live.com/download?resid=F87CD694B48033C9!114&authkey=!ADeQuq8LqQCrD3I&ithint=file%2cwoff) format('woff');
+}
+*/
+
+body {
+    font-family: "Whitney", "ABC Ginto Normal", "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
