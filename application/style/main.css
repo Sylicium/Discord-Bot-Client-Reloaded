@@ -57,6 +57,8 @@
 
 body {
     font-family: "Whitney", "ABC Ginto Normal", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
 }
 
 .noselect {

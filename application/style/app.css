@@ -570,19 +570,24 @@
 
 #app #channel_content div.messages_and_members div.messages_read_send #messages {
     /* flex: 0 0 calc(100% - 240px); */
-    display: flex;
-    flex-direction: column-reverse;
+    /* display: flex;
+    flex-direction: column-reverse; */
     overflow: hidden;
     overflow-y: scroll;
     height: calc(100% - 70px);
-    padding-bottom: 30px;
+    display: flex;
+    flex-direction: column-reverse;
+    padding-bottom: 15px;
 }
 
 #app #channel_content div.messages_and_members div.messages_read_send #messages div.message {
-    padding-left: 72px;
+    padding: 5px 0px 5px 72px;
     overflow: hidden;
-    padding-bottom: 5px;
-    /* margin: 10px 0px 10px 0px; */
+    margin: 8px 0px 8px 0px;
+}
+#app #channel_content div.messages_and_members div.messages_read_send #messages div.message div.replying {
+    position: relative;
+    margin-bottom: 7px;
 }
 #app #channel_content div.messages_and_members div.messages_read_send #messages div.message div.replying:before {
     margin-left: -36px;
@@ -590,10 +595,10 @@
     width: 30px;
     height: 10px;
     content: "";
-    position: absolute;
     border-top: 2px solid var(--gray-nine);
     border-left: 2px solid var(--gray-nine);
     border-radius: 5px 0px 0px 0px;
+    position: absolute;
 }
 
 #app #channel_content div.messages_and_members div.messages_read_send #messages div.message div.replying div.replyed_message {
@@ -615,6 +620,10 @@
     color: var(--gray-seven);
     padding-right: 5px;
     overflow: hidden;
+    cursor: pointer;
+}
+#app #channel_content div.messages_and_members div.messages_read_send #messages div.message div.replying div.replyed_message div.user:hover {
+    text-decoration: underline;
 }
 #app #channel_content div.messages_and_members div.messages_read_send #messages div.message div.replying div.replyed_message div.content {
     color: var(--gray-seven);
@@ -622,10 +631,16 @@
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
-    width: 50%;
+    width: 87%;
+    cursor: pointer;
+}
+#app #channel_content div.messages_and_members div.messages_read_send #messages div.message div.replying div.replyed_message div.content:hover {
+    color: white;
 }
 
-
+#app #channel_content div.messages_and_members div.messages_read_send #messages div.message div.msg {
+    position: relative;
+}
 #app #channel_content div.messages_and_members div.messages_read_send #messages div.message div.msg img.avatar {
     margin-left: -55px;
     margin-top: -2px;
@@ -636,9 +651,8 @@
 }
 #app #channel_content div.messages_and_members div.messages_read_send #messages div.message div.msg div.title {
     display: flex;
-    margin-top: 7px;
     margin-bottom: 3px;
-    align-items: baseline;
+    align-items: center;
 }
 #app #channel_content div.messages_and_members div.messages_read_send #messages div.message div.msg div.title div.username {
     color: aqua;
