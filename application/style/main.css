@@ -3,10 +3,14 @@
     --gray-one: #2F3136;
     --gray-two: #36393F;
     --gray-three: #454950;
-    --gray-four: #201825;
+    --gray-four: #202225;
     --gray-five: #292B2F;
     --gray-six: #8E9297;
     --gray-seven: #B9BBBE;
+    --gray-eight: #2E3338;
+    --gray-nine: #4F545C;
+    --gray-ten: #40444B;
+    --gray-eleven: #D7D6D9;
 
     --gray-survol-one: #3C3F45;
     --gray-survol-two: #DCDDDE;
@@ -17,6 +21,10 @@
 
     --red-one: #ED4245;
 
+    --blue-one: #949CF7;
+    --blue-two: #707BF4;
+
+
     --blue-one: #5865F2;
     --btn-careful-red: #DA4445;
     --btn-careful-red2: #D83C3E;
@@ -26,7 +34,7 @@
     --btn-blue: #5865F2;
     --btn-blue-hover: #5865F2;
 
-    --font-size-guild-title: 2vh;
+    --font-size-guild-title: 16px;
     --saturation-factor: 1;
     --elevation-low: 0 1px 0 hsla(240,calc(var(--saturation-factor, 1)*11.1%),1.8%,0.2),0 1.5px 0 hsla(240,calc(var(--saturation-factor, 1)*7.7%),2.5%,0.05),0 2px 0 hsla(240,calc(var(--saturation-factor, 1)*11.1%),1.8%,0.05);
 
@@ -59,4 +67,41 @@ body {
           -ms-user-select: none; /* Internet Explorer/Edge */
               user-select: none; /* Non-prefixed version, currently
                                     supported by Chrome, Edge, Opera and Firefox */
+}
+
+
+
+.scrollbar-1::-webkit-scrollbar {
+    z-index: 0;
+    width: 16px;
+}
+.scrollbar-1::-webkit-scrollbar-track {
+    border: none;
+    border-radius: 10px;
+    background: var(--gray-eight);
+    border-radius: 999px;
+    background-clip: padding-box;
+    border: 4px transparent solid;
+}
+.scrollbar-1::-webkit-scrollbar-thumb {
+    background: var(--gray-four); 
+    border-radius: 999px;
+    background-clip: padding-box;
+    border: 4px transparent solid;
+}
+
+.scrollbar-2::-webkit-scrollbar {
+    z-index: 0;
+    width: 10px;
+}
+.scrollbar-2::-webkit-scrollbar-track {
+    border: none;
+    border-radius: 10px;
+    background: var(--gray-eight);
+}
+.scrollbar-2::-webkit-scrollbar-thumb {
+    background: var(--gray-four); 
+    border-radius: 999px;
+    background-clip: padding-box;
+    border: 3px transparent solid;
 }

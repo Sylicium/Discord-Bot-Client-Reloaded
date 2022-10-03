@@ -32,13 +32,13 @@
 #app #channel_content {
     background-color: var(--gray-two);
     width: 100%;
+    display: flex;
+    flex-direction: column;
 }
+/* classe plus basse -> #app #channel_content div.messages_and_members div#member_list
 #app #member_list {
-    background-color: #444444;
-    width: 240px;
-    min-width: 240px;
-    max-width: 240px;
 }
+*/
 
 
 /********** Guild list **********/
@@ -113,6 +113,8 @@
 #app #channels_and_settings div.modes div.guild_mode {
     /* background-color: aqua; */
     height: 100%;
+    display: flex;
+    flex-direction: column;
 }
         /* Guild panel banner */
 #app #channels_and_settings div.modes div.guild_mode div.guild_panel_banner {
@@ -120,6 +122,7 @@
     transition: background-color .1s linear;
     -webkit-box-shadow: var(--elevation-low);
     box-shadow: var(--elevation-low);
+    z-index: 1;
     font-weight: 600;
     vertical-align: center;
     padding: 16px 16px;
@@ -152,17 +155,15 @@
     max-height: 20px;
 }
 #app #channels_and_settings div.modes div.guild_mode div.guild_panel_banner div.guild_title div.left div.title{
+    white-space: nowrap;
     overflow: hidden;
+    text-overflow: ellipsis;
+    color:white;
 }
 #app #channels_and_settings div.modes div.guild_mode div.guild_panel_banner div.guild_title label.guild_panel_banner_text {
     margin: 0px auto;
     font-size: var(--font-size-guild-title); /* Maybe without */
     height: fit-content;
-    color:white;
-
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
 }
 
         /* Guild categories */
@@ -380,10 +381,11 @@
 
 /************************************************/
 /*                                              */
-/*                    Messages                  */
+/*           messages and Members               */
 /*                                              */
 /************************************************/
 
+/* Top Banner */
 #app #channel_content div.message:hover {
     background-color: var(--gray-survol-four);
 }
@@ -396,6 +398,7 @@
     /* padding: 16px 16px; */
     height: 60px;
     display: flex;
+    z-index: 1;
 
     align-items: center;
 }
@@ -433,9 +436,147 @@
 
 #app #channel_content div.banner div.buttons div.button:hover {
     
-    background-color: var(--gray-survol-three);
+    /* background-color: var(--gray-survol-three); */
+    color: var(--gray-survol-two);
 }
 
+/* messages and members */
+#app #channel_content div.messages_and_members {
+    display: flex;
+    /*flex-direction: column;
+    height: 100%; */
+    flex: 1 1 100%;
+    overflow-y: hidden;
+}
+
+    /* Messages */
+    
+#app #channel_content div.messages_and_members div.messages_read_send{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    /* background-color: var(--gray-two); */
+}
+
+
+#app #channel_content div.messages_and_members div.messages_read_send #messages {
+    /* flex: 0 0 calc(100% - 240px); */
+    display: flex;
+    flex-direction: column-reverse;
+    overflow-y: scroll;
+    height: calc(100% - 70px);
+}
+
+#app #channel_content div.messages_and_members div.messages_read_send div.message_send_bar {
+    width: 100%;
+    height: max-content;
+    height: 70px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+#app #channel_content div.messages_and_members div.messages_read_send div.message_send_bar div.input_bar {
+    display: flex;
+    background-color: var(--gray-ten);
+    width: 100%;
+    margin: 0px 15px 0px 15px;
+    border-radius: 8px;
+    transform: translate(0,-15px);
+}
+#app #channel_content div.messages_and_members div.messages_read_send div.message_send_bar div.input_bar div.attach_files {
+    color: var(--gray-seven);
+    padding: 10px 16px;
+}
+#app #channel_content div.messages_and_members div.messages_read_send div.message_send_bar div.input_bar div.input {
+    width: 100%;
+    display: flex;
+}
+#app #channel_content div.messages_and_members div.messages_read_send div.message_send_bar div.input_bar div.input input.input-send_message{
+    width: 100%;
+    background-color: transparent;
+    border: none;
+    font-size: 15px;
+    caret-color: white;
+    color: var(--gray-eleven);
+}
+
+#app #channel_content div.messages_and_members div.messages_read_send div.message_send_bar div.input_bar div.input input.input-send_message:focus{
+    outline: none;
+}
+
+#app #channel_content div.messages_and_members div.messages_read_send div.message_send_bar div.buttons {
+    display: flex;
+    align-items: center;
+    margin-left: auto;
+}
+
+#app #channel_content div.messages_and_members div.messages_read_send div.message_send_bar div.separator {
+    display: flex;
+    align-items: center;
+    margin-left: auto;
+}
+#app #channel_content div.messages_and_members div.messages_read_send div.message_send_bar div.separator div.vertical-separator{
+    background-color: var(--gray-nine);
+    width: 1px;
+    height: 70%;
+}
+
+
+#app #channel_content div.messages_and_members div.messages_read_send div.message_send_bar div.buttons div.button {
+    margin: 5px;
+    margin-left: auto;
+    padding: 5px;
+    cursor: pointer;
+    color: var(--gray-seven);
+}
+#app #channel_content div.messages_and_members div.messages_read_send div.message_send_bar div.buttons div.button svg.emojis_button {
+    filter: grayscale(1);
+    transition: 0.1s all;
+}
+#app #channel_content div.messages_and_members div.messages_read_send div.message_send_bar div.buttons div.button svg.emojis_button:hover {
+    filter: grayscale(0);
+    transform: scale(1.15);
+    transition: 0.1s all;
+}
+
+#app #channel_content div.messages_and_members div.messages_read_send div.message_send_bar div.button_send {
+    display: flex;
+    align-items: center;
+    margin-left: auto;
+    padding: 12px 16px 12px 16px;
+    cursor: pointer;
+    /*
+    color: var(--blue-one);
+    filter: grayscale(1);
+    */
+}
+
+#app #channel_content div.messages_and_members div.messages_read_send div.message_send_bar div.button_send:not(.activated) {
+    color: var(--gray-nine);
+    cursor: not-allowed;
+}
+#app #channel_content div.messages_and_members div.messages_read_send div.message_send_bar div.button_send.activated {
+    color: var(--blue-one);
+}
+#app #channel_content div.messages_and_members div.messages_read_send div.message_send_bar div.button_send.activated:hover {
+    color: var(--blue-two);
+}
+
+
+
+
+    /* Members list */
+    
+#app #channel_content div.messages_and_members #member_list {
+    background-color: var(--gray-one);
+    width: 240px;
+    min-width: 240px;
+    max-width: 240px;
+    margin-left: auto;
+    /* height: 94%; */
+    flex: 0 0 240px;
+}
+        
 
 
 /*
