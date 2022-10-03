@@ -217,6 +217,8 @@
     cursor: pointer;
 
     margin-left: 10px;
+
+    overflow: hidden;
 }
 
 
@@ -238,21 +240,40 @@
 }
 #app #channels_and_settings div.modes div.guild_mode #channel_list div.channel div.left {
     display: flex;
-    flex-direction: row;
-    width: 80%;
-    align-items: center;
     overflow: hidden;
+}
+#app #channels_and_settings div.modes div.guild_mode #channel_list div.channel div.left div.name {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis
+}
+#app #channels_and_settings div.modes div.guild_mode #channel_list div.channel:hover div.left {
+    width: 80%;
 }
 #app #channels_and_settings div.modes div.guild_mode #channel_list div.channel div.right {
     /* display: flex;
     flex-direction: row; */
+    margin-left: auto;
 }
 #app #channels_and_settings div.modes div.guild_mode #channel_list div.channel div.right div.channel_options{
     display: flex;
     flex-direction: row;
 }
+#app #channels_and_settings div.modes div.guild_mode #channel_list div.channel:not(:hover) div.right div.channel_options div.button{
+    display: none;
+}
+#app #channels_and_settings div.modes div.guild_mode #channel_list div.channel div.right div.channel_options div.button{
+    color: var(--gray-seven);
+    padding: 2px;
+}
+#app #channels_and_settings div.modes div.guild_mode #channel_list div.channel div.right div.channel_options div.button:hover {
+    color: var(--gray-twelve);
+}
 #app #channels_and_settings div.modes div.guild_mode #channel_list div.channel:not(.unread) div.unread div.dot {
     display: none;
+}
+#app #channels_and_settings div.modes div.guild_mode #channel_list div.channel.unread div.left div.name {
+    overflow: hidden;
 }
 #app #channels_and_settings div.modes div.guild_mode #channel_list div.channel.unread div.left div.name label.text {
     color: white;
