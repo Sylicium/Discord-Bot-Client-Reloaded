@@ -9,11 +9,31 @@
 
     <div class="main">
         <h1 class="loading">Loading...</h1>
-        <a href="./pages/app.html">Click me</a>
+        <input id="token_input" placeholder="Discord bot token">
+        <button onclick="DBCR_API.login(document.getElementById('token_input').value)">Login</button>
+
+        <br><br><br>
+        <a href="./pages/app.html">Test page</a>
+
+        <div id="logs">
+
+        </div>
     </div>
 
 
 </body>
+
+<script>
+
+</script>
+<script src="./nodescript/BasicFunctions.js"></script>
+<script src="./nodescript/DBCR_API.js"></script>
+<script src="./nodescript/DBCR_API_PATTERNS.js"></script>
+
+<script>
+
+
+</script>
 
 </html>
 

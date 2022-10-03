@@ -284,6 +284,8 @@
     width: 4px;
     border-radius: 0 4px 4px 0;
     margin-left: -15px;
+    position: absolute;
+    margin-top: -5px;
 }
 
 #app #channels_and_settings div.modes div.guild_mode #channel_list div.channel div.left div.icon {
