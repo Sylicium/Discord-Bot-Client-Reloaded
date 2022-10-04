@@ -1,21 +1,32 @@
 
 
-let DBCR_API;
+let DBCR_API
 
 
 function __main__() {
 
 const Discord = require("discord.js")
 
-DBCR_API = {
-    login: (token) => {
-        Bot.login(token)
-        _log("trying to log with token",token)
+class new_DBCR_API {
+    constructor(Bot) {
+        self.Bot = Bot
     }
 
+    get get() {
+        return self
+    }
+
+    login(token) {
+        self.Bot.login(token)
+        _log("trying to log with token",token)
+    }
 }
-    
+
+
 let Bot = new Discord.Client()
+
+
+DBCR_API = new new_DBCR_API(Bot)
 
 
 
@@ -26,6 +37,7 @@ Bot.on("ready", () => {
 
         setTimeout(() => {
             _log("coucou")
+            return;
             try {
                 DBCR_API_PATTERNS.html.drawGuilds(DBCR_API_PATTERNS.html.getGuilds(Bot.guilds.cache.map(x => x)))
             } catch(e) {

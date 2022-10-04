@@ -23,5 +23,9 @@
     "application"
   ],
   "author": "Sylicium",
-  "license": "MIT"
+  "license": "MIT",
+  "devDependencies": {
+    "nw-vue-devtools-prebuilt": "^0.0.10"
+  },
+  "chromium-args": "--load-extension='./node_modules/nw-vue-devtools-prebuilt/extension'"
 }

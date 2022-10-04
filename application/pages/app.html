@@ -961,6 +961,7 @@
                 <div id="member_list">
                     <div>not coded</div>
                     <button onclick="_destroyParent(this)">Click to hide</button>
+                    <button onclick="document.location.href = document.location.origin + '/application/index.html'">Back to index</button>
                 </div>
             </div>
 
@@ -984,6 +985,12 @@
 function _destroyParent(elem) {
     elem.parentElement.remove()
 }
+
+
+setTimeout(() => {
+    _log(JSON.stringify(DBCR_API.get.Bot.guilds.cache.map(x => x)))
+}, 1000)
+
 
 </script>
 
